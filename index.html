@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFA Calculator - Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>CFA Calculator</h1>
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="display" class="display-input" readonly placeholder="0">
+                <div class="display-history" id="history"></div>
+            </div>
+
+            <div class="calculator-grid">
+                <!-- Row 1 -->
+                <button class="btn btn-function" onclick="calculator.clear()">AC</button>
+                <button class="btn btn-function" onclick="calculator.deleteChar()">DEL</button>
+                <button class="btn btn-function" onclick="calculator.toggleSign()">±</button>
+                <button class="btn btn-operator" onclick="calculator.appendOperator('/')">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn btn-function" onclick="calculator.appendFunction('sqrt')">√</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="calculator.appendOperator('*')">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn btn-function" onclick="calculator.appendFunction('pow')">x²</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="calculator.appendOperator('-')">−</button>
+
+                <!-- Row 4 -->
+                <button class="btn btn-function" onclick="calculator.appendFunction('cbrt')">∛</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
+                <button class="btn btn-operator" onclick="calculator.appendOperator('+')">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn btn-function" onclick="calculator.appendFunction('reciprocal')">1/x</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('0')">0</button>
+                <button class="btn btn-number" onclick="calculator.appendDecimal()">.</button>
+                <button class="btn btn-equals" onclick="calculator.calculate()">​=</button>
+            </div>
+
+            <div class="advanced-functions">
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('sin')">sin</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('cos')">cos</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('tan')">tan</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('log')">log</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('ln')">ln</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('factorial')">n!</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('pi')">π</button>
+                <button class="btn btn-advanced" onclick="calculator.appendFunction('e')">e</button>
+            </div>
+
+            <div class="mode-toggle">
+                <button class="mode-btn active" onclick="calculator.setAngleMode('deg')">DEG</button>
+                <button class="mode-btn" onclick="calculator.setAngleMode('rad')">RAD</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
